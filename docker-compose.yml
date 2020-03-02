@@ -1,0 +1,34 @@
+version: "3.3"
+
+services:
+  client:
+    restart: always
+    build:
+      context: ./client
+      args:
+        - ENV=${ENV}
+    image: pern_client:latest
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+    env_file:
+      - ./.env
+    volumes:
+      - ./client:/usr/src/client
+      - /usr/src/client/node_modules
+
+  server:
+    restart: always
+    build:
+      context: ./api
+      args:
+        - ENV=${ENV}
+    image: pern_api:latest
+    ports:
+      - 4000:4000
+    env_file:
+      - ./.env
+    volumes:
+      - ./api:/usr/src/api
+      - /usr/src/api/node_modules
