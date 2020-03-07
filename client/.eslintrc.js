@@ -1,14 +1,19 @@
+const { resolve } = require('./next.aliases');
+
 module.exports = {
   env: {
     browser: true,
     es6: true,
-    node: true,
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb'
   ],
   globals: {
+    document: true,
+    window: true,
+    process: true,
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
@@ -22,35 +27,30 @@ module.exports = {
   },
   plugins: [
     'react',
+    'react-hooks',
     '@typescript-eslint',
   ],
-  settings: {
-    "import/extensions": [".js",".jsx",".ts",".tsx"],
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts",".tsx"]
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [".js",".jsx",".ts",".tsx"]
-      }
-    }
-  },
   rules: {
+    // general
     "semi": ["error", "never"],
     "react/prop-types": "off",
-    "react/jsx-filename-extension": "off",
-    "import/prefer-default-export": "off",
-    "import/no-default-export": "error",
-    "import/no-unresolved": 0,
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ]
+
+    // react
+    "react/jsx-filename-extension": ["warn", {
+      "extensions": [".jsx", ".tsx"]
+    }]
   },
+  // settings: {
+  //   "import/resolver": {
+  //     "alias": {
+  //       "map": [
+  //         ...Object.entries(resolve.alias)
+  //       ],
+  //       "extensions": resolve.extensions
+  //     },
+  //     "node": {
+  //       "extensions": resolve.extensions
+  //     }
+  //   }
+  // }
 };
