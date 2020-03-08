@@ -1,12 +1,9 @@
 // modules
 import {
-  Table,
-  Model,
-  Index,
-  Column,
+  Table, Model,
+  Index, Column,
   NotEmpty,
-  CreatedAt,
-  UpdatedAt,
+  CreatedAt, UpdatedAt,
   AllowNull,
   DataType,
 } from 'sequelize-typescript'

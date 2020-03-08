@@ -1,4 +1,16 @@
-module.exports = {
+interface Config {
+  username?: string;
+  password?: string;
+  database?: string;
+  host?: string;
+  dialect?: string;
+}
+
+interface EnvConfig {
+  [name: string]: Config;
+}
+
+export const config: EnvConfig = {
   development: {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,

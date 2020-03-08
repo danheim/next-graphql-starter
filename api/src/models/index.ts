@@ -4,19 +4,21 @@ import { Sequelize } from 'sequelize-typescript'
 // models
 import { User } from '@/models/User'
 
+import { config as defaultConfig } from '@/../config/config'
+
+const config = defaultConfig[process.env.ENV as string]
+
 const models: any = [
   User,
 ]
 
-const config = require('../../config/config')[process.env.ENV as string]
-
 export const initSequelize = async () => {
   const sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
+    config.database as string,
+    config.username as string,
+    config.password as string,
     {
-      ...config,
+      ...config as {},
       models,
     },
   )
