@@ -1,16 +1,17 @@
 // modules
 import { Sequelize } from 'sequelize-typescript'
 
-// models
-import { User } from '@/models/User'
-
+// constants
 import { config as defaultConfig } from '@/../config/config'
 
-const config = defaultConfig[process.env.ENV as string]
+// models
+import { User } from '@/models/User'
 
 const models: any = [
   User,
 ]
+
+const config = defaultConfig[process.env.ENV as string]
 
 export const initSequelize = async () => {
   const sequelize = new Sequelize(
