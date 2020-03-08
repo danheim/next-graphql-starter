@@ -7,7 +7,7 @@ services:
       context: ./client
       args:
         - ENV=${ENV}
-    image: pern_client:latest
+    image: ucp_client:latest
     ports:
       - 3000:3000
     depends_on:
@@ -21,10 +21,10 @@ services:
   server:
     restart: always
     build:
-      context: ./api
+      context: api
       args:
         - ENV=${ENV}
-    image: pern_api:latest
+    image: ucp_api:latest
     ports:
       - 4000:4000
     env_file:

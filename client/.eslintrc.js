@@ -1,34 +1,32 @@
-const { resolve } = require('./next.aliases');
-
 module.exports = {
   env: {
     browser: true,
     es6: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'airbnb'
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb"
   ],
   globals: {
     document: true,
     window: true,
     process: true,
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
   },
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: "module",
   },
   plugins: [
-    'react',
-    'react-hooks',
-    '@typescript-eslint',
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
   ],
   rules: {
     // general

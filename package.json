@@ -9,5 +9,6 @@
     "lint-staged": "^10.0.2",
     "stylelint": "^13.0.0",
     "typescript": "^3.7.5"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,15 +1,20 @@
-import express from 'express'
+import path from 'path'
+import 'module-alias/register'
+import dotenv from 'dotenv'
 
-const app = express()
-const port = 4000
+import { startServer } from '@/server/startServer'
 
-app.get('/', (req, res) => {
-  res.send('Hello')
+dotenv.config({ path: path.join(__dirname, '..', '.env') })
+
+const port = process.env.API_PORT
+
+startServer().then(({ server }) => {
+  server.listen({ port }, () => {
+    // eslint-disable-next-line no-console
+    console.log(
+      ' 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀\n',
+      `Server is ready on http://localhost:${port}/\n`,
+      '🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀',
+    )
+  })
 })
-
-app.listen(
-  { port },
-  () => {
-    console.log(`Start on ${port} port`)
-  },
-)

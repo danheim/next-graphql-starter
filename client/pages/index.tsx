@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 
 const IndexPage: NextPage = () => (
   <div>
-    Hello12
+    Hello12f
   </div>
 )
 
