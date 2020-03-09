@@ -7,7 +7,7 @@ services:
       context: ./client
       args:
         - ENV=${ENV}
-    image: ucp_client:latest
+    image: next_starter:latest
     ports:
       - 3000:3000
     depends_on:
@@ -24,7 +24,7 @@ services:
       context: api
       args:
         - ENV=${ENV}
-    image: ucp_api:latest
+    image: graphql_starter:latest
     ports:
       - 4000:4000
     env_file:
