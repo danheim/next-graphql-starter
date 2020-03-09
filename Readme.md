@@ -2,6 +2,8 @@
   <h1>Starter pack 🚀</h1>
 </div>
 
+Full stack JavaScript (TypeScript) starter pack 🎉
+
 ## Technologies
 
 Client side based on:
