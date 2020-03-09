@@ -2,6 +2,8 @@
   <h1>Starter pack 🚀</h1>
 </div>
 
+## Technologies
+
 Client side based on:
 
 1. ReactJS
